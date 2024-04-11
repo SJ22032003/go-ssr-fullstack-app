@@ -1,6 +1,7 @@
 # Go SSR Fullstack Application
 
 This is a fullstack application that provides complete server-side rendering (SSR) using Go, Gin, Templ, and HTMX.
+You can run React components on the server-side and render them on the client-side using HTMX.
 
 ## Technologies Used
 

@@ -1,1 +1,0 @@
-(()=>{document.addEventListener("DOMContentLoaded",()=>{console.log("Dialog script loaded");let o=document.getElementById("modal-button-confirm");o?o.addEventListener("click",()=>{console.log("Modal confirm button clicked")}):console.log("Modal confirm button not found")});})();

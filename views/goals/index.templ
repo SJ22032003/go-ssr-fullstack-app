@@ -1,0 +1,61 @@
+package goals_views
+
+import (
+	"github.com/SJ22032003/go-fullstack/views/layout"
+	"github.com/SJ22032003/go-fullstack/model"
+)
+
+func getGoals(ctx context.Context) []model.Goal {
+	if goals, ok := ctx.Value("goals").([]model.Goal); ok {
+		return goals
+	}
+	return []model.Goal{}
+}
+
+
+templ GoalsPage() {
+	@layout.BaseLayout() {
+		<main class="flex flex-col gap-8 p-6">
+			@heading()
+			@goalInput()
+			@goalsList()
+		</main>
+	}
+}
+
+templ heading() {
+	<section>
+		<h1 class="text-4xl">Manage your course goals</h1>
+	</section>
+}
+
+templ goalInput() {
+	<section>
+		<form
+			class="flex gap-8 w-full"
+			hx-post="/public/goals/add-goal"
+			hx-swap="beforeend"
+			hx-target="#goals-list"
+			hx-on:submit="this.reset()"
+			hx-disabled-elt="form button"
+		>
+			<div class="flex flex-col gap-2 w-full">
+				<label for="goal" class="text-lg">Goal</label>
+				<input type="text" id="goal" name="goal" required class="h-12 border-2 text-2xl p-2"/>
+			</div>
+			<div class="flex w-full">
+				<button type="submit" class="btn btn-info self-end">Add goal</button>
+			</div>
+		</form>
+	</section>
+}
+
+templ goalsList() {
+	<section>
+		<ul id="goals-list">
+			for _, goal := range model.GetGoalsFromCtx(ctx) {
+				@GoalItem(goal)
+			}
+		</ul>
+	</section>
+}

@@ -1,0 +1,6 @@
+<main class=\"flex flex-col gap-8 p-6\">
+</main>
+<section><h1 class=\"text-4xl\">Manage your course goals</h1></section>
+<section><form class=\"flex gap-8 w-full\" hx-post=\"/public/goals/add-goal\" hx-swap=\"beforeend\" hx-target=\"#goals-list\" hx-on:submit=\"this.reset()\" hx-disabled-elt=\"form button\"><div class=\"flex flex-col gap-2 w-full\"><label for=\"goal\" class=\"text-lg\">Goal</label> <input type=\"text\" id=\"goal\" name=\"goal\" required class=\"h-12 border-2 text-2xl p-2\"></div><div class=\"flex w-full\"><button type=\"submit\" class=\"btn btn-info self-end\">Add goal</button></div></form></section>
+<section><ul id=\"goals-list\">
+</ul></section>

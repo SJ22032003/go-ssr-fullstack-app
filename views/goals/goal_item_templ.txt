@@ -1,0 +1,4 @@
+<li id=\"
+\" class=\"text-lg text-gray-800 border-b border-gray-300 py-2 px-4 bg-slate-50 flex justify-between items-center my-2\"><span class=\"text-dark-500\">
+</span> <button class=\"btn btn-error text-white\" hx-delete=\"
+\" hx-swap=\"outerHTML\" hx-target=\"closest li\" hx-disabled-elt=\"this\">Remove</button></li>

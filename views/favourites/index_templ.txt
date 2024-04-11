@@ -1,0 +1,5 @@
+<main class=\"flex flex-col p-6 gap-8\">
+</main>
+<h1 class=\"text-4xl\">Favorite</h1>
+<div class=\"indicator\"><span class=\"cursor-pointer indicator-item badge badge-secondary\"></span><div class=\"card w-96 bg-base-100 shadow-xl bg-white\"><div class=\"card-body\"><h2 class=\"card-title\">
+</h2></div></div></div>

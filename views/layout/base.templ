@@ -1,0 +1,18 @@
+package layout
+
+import (
+	partials "github.com/SJ22032003/go-fullstack/views/partials"
+	dialog "github.com/SJ22032003/go-fullstack/views/components/common/dailog"
+)
+
+templ BaseLayout() {
+	<!DOCTYPE html>
+	<html data-theme="garden">
+		@partials.Head()
+		<body>
+			@dialog.Modal()
+			@partials.Navbar()
+			{ children... }
+		</body>
+	</html>
+}

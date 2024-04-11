@@ -1,0 +1,22 @@
+package goals_views
+
+import (
+	"fmt"
+	model "github.com/SJ22032003/go-fullstack/model"
+)
+
+templ GoalItem(goal model.Goal) {
+	<li
+		id={ fmt.Sprintf("goal-id-%v", goal.Id) }
+		class="text-lg text-gray-800 border-b border-gray-300 py-2 px-4 bg-slate-50 flex justify-between items-center my-2"
+	>
+		<span class="text-dark-500">{ goal.Name }</span>
+		<button
+			class="btn btn-error text-white"
+			hx-delete={ fmt.Sprintf("/public/goals/delete-goal/%v", goal.Id) }
+			hx-swap="outerHTML"
+			hx-target="closest li"
+			hx-disabled-elt="this"
+		>Remove</button>
+	</li>
+}

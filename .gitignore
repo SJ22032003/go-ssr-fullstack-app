@@ -2,3 +2,4 @@ node_modules
 tmp
 output.css
 bundle.js
+*_templ.txt

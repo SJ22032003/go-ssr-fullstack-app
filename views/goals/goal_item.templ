@@ -1,9 +1,24 @@
 package goals_views
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
 	model "github.com/SJ22032003/go-fullstack/model"
 )
+
+func dataPayloadForModal(goal model.Goal) string {
+	data := map[string]interface{}{
+		"title": 	"Remove Goal",
+		"description": goal.Name,
+		"id":   goal.Id,
+	}
+	jsonData, err := json.Marshal(data)
+	if err != nil {
+		log.Fatalf("Error marshalling data: %v", err)
+	}
+	return string(jsonData)
+}
 
 templ GoalItem(goal model.Goal) {
 	<li
@@ -17,6 +32,14 @@ templ GoalItem(goal model.Goal) {
 			hx-swap="outerHTML"
 			hx-target="closest li"
 			hx-disabled-elt="this"
+			hx-on::confirm="openModalForGoalRemoving(event)"
+			data-action={ dataPayloadForModal(goal) }
 		>Remove</button>
 	</li>
+	<script>
+			function openModalForGoalRemoving(e) {
+				e.preventDefault();
+				window.openModal(e)
+			}
+		</script>
 }

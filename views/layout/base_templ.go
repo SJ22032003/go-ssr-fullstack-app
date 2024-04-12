@@ -11,7 +11,6 @@ import "io"
 import "bytes"
 
 import (
-	dialog "github.com/SJ22032003/go-fullstack/views/components/common/dailog"
 	partials "github.com/SJ22032003/go-fullstack/views/partials"
 )
 
@@ -37,10 +36,6 @@ func BaseLayout() templ.Component {
 			return templ_7745c5c3_Err
 		}
 		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 2)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = dialog.Modal().Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

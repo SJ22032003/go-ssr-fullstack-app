@@ -1,10 +1,16 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/SJ22032003/go-fullstack/handler"
+	"github.com/gin-gonic/gin"
+)
 
 func PublicRoutes(v *gin.RouterGroup) {
-	publicRoute := v.Group("/public")
+
+	authHandler := handler.AuthHandler{}
+
+	publicRoute := v.Group("/")
 	{
-		publicRoute.GET("/", func(c *gin.Context) {})
+		publicRoute.GET("/", authHandler.AuthPage)
 	}
 }

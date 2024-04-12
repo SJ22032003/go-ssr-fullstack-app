@@ -1,1 +1,1 @@
-<div class=\"navbar bg-base-100\"><div class=\"flex-1\"><h2 class=\"text-2xl\">Goals Manager</h2></div><div class=\"flex-none\"><ul class=\"menu menu-horizontal px-1\"><li><a href=\"/public/goals\">Add Goals +</a></li><li><a href=\"/public/favourites\">Favorite</a></li></ul></div></div>
+<div class=\"navbar bg-base-100\"><div class=\"flex-1\"><h2 class=\"text-2xl\">Goals Manager</h2></div><div class=\"flex-none\"><ul class=\"menu menu-horizontal px-1\"><li><a href=\"/goals\">Add Goals +</a></li></ul></div></div>

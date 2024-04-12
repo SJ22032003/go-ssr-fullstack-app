@@ -33,7 +33,7 @@ templ goalInput() {
 	<section>
 		<form
 			class="flex gap-8 w-full"
-			hx-post="/public/goals/add-goal"
+			hx-post="/goals/add-goal"
 			hx-swap="beforeend"
 			hx-target="#goals-list"
 			hx-on:submit="this.reset()"

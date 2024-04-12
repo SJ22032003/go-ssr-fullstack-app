@@ -28,7 +28,7 @@ templ GoalItem(goal model.Goal) {
 		<span class="text-dark-500">{ goal.Name }</span>
 		<button
 			class="btn btn-error text-white"
-			hx-delete={ fmt.Sprintf("/public/goals/delete-goal/%v", goal.Id) }
+			hx-delete={ fmt.Sprintf("/goals/delete-goal/%v", goal.Id) }
 			hx-swap="outerHTML"
 			hx-target="closest li"
 			hx-disabled-elt="this"

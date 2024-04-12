@@ -1,3 +1,0 @@
-<dialog id=\"my-modal\" class=\"modal modal-bottom sm:modal-middle\"><div class=\"modal-box\"><h3 class=\"font-bold text-lg\" id=\"modal-title\"></h3><p class=\"py-4\" id=\"modal-description\"></p><div class=\"modal-action\">
-<button type=\"button\" class=\"btn\" id=\"modal-close-btn\" onclick=\"
-\">Close</button> <button type=\"button\" class=\"btn btn-primary\" id=\"modal-confirm-btn\">Confirm</button></div></div></dialog>

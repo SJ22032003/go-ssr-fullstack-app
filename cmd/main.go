@@ -11,7 +11,8 @@ func main() {
 
 	v := server.Group("/")
 
-	routes.PublicRoutes(server, v)
+	routes.GoalRoutes(v)
+	routes.PublicRoutes(v)
 
 	server.Run(":8080")
 

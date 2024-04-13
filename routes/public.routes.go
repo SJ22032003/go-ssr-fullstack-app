@@ -12,6 +12,7 @@ func PublicRoutes(v *gin.RouterGroup) {
 	publicRoute := v.Group("/")
 	{
 		publicRoute.GET("/", authHandler.AuthPage)
-		publicRoute.POST("/validate", authHandler.InputValidation)
+		publicRoute.POST("/login", authHandler.Login)
+		// publicRoute.POST("/validate", authHandler.InputValidation)
 	}
 }

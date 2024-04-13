@@ -7,7 +7,12 @@ import (
 templ LoginPage() {
 	@layout.BaseLayout() {
 		<main class="flex justify-center">
-			<form hx-post="/login" class="flex flex-col gap-2 card shadow-xl p-4 md:mx-w-96">
+			<form
+				hx-post="/login"
+				class="flex flex-col gap-2 card shadow-xl p-4 md:mx-w-96"
+				hx-target="#extra-information"
+				hx-indicator=".loading"
+			>
 				<h1 class="text-2xl font-bold">Login</h1>
 				<section>
 					<label class="input input-bordered flex items-center gap-2">
@@ -16,14 +21,10 @@ templ LoginPage() {
 							type="email"
 							class="grow"
 							placeholder="Email"
-							hx-post="/validate"
-							hx-target="next p"
-							hx-params="email"
 							name="email"
 							id="email"
 						/>
 					</label>
-					<p class="text-red-500 pl-4"></p>
 				</section>
 				<section>
 					<label class="input input-bordered flex items-center gap-2">
@@ -31,17 +32,23 @@ templ LoginPage() {
 						<input
 							type="password"
 							class="grow"
-							value=""
 							placeholder="******"
-							hx-post="/validate"
-							hx-target="next p"
 							id="password"
 							name="password"
 						/>
 					</label>
-					<p class="text-red-500 pl-4"></p>
 				</section>
+				<section id="extra-information"></section>
+				<button class="btn btn-primary w-full">Login</button>
 			</form>
 		</main>
 	}
+}
+
+templ AuthErrorCmp(errors []string) {
+	<ul class="w-full">
+		for _, error := range errors {
+			<li class="text-red-500 pl-4">{ error }</li>
+		}
+	</ul>
 }

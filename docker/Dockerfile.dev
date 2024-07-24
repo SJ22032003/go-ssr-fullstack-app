@@ -1,0 +1,29 @@
+# docker-compose -f docker-compose.dev.yml up --build
+
+FROM golang:1.22.5
+
+WORKDIR /app
+
+# INSTALL GIT TO SYNC TO REMOTE REPO INSIDE CONTAINER
+RUN apt-get update && apt-get install -y git
+
+# INSTALL AIR FOR AUTO RELOAD | DO air init TO CONFIGURE
+RUN go install github.com/air-verse/air@latest
+
+# INSTALL node
+RUN apt-get update && apt-get install -y nodejs npm
+
+
+COPY go.mod go.sum ./
+
+RUN go mod download
+
+
+COPY . .
+
+# INSTALL npm packages
+RUN npm install 
+
+EXPOSE 8080
+
+CMD ["make", "run"]

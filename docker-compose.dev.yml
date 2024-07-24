@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  app:
+    container_name: go_fullstack_ssr_htmx_app
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/app
+      - ~/.ssh:/root/.ssh
+    environment:
+      - GO_ENV=dev
